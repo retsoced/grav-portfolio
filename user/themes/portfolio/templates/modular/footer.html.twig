@@ -1,0 +1,22 @@
+</div>
+</main>
+<footer class="{{ page.header.class }}">
+  <div class="row">
+    <div class="col-4 copyright">
+      © {{ "now"|date("Y") }} Darryll A. DeCoster
+    </div>
+    <div class="col-8">
+      <ul class="social-links">
+
+        {% for link in page.header.connections %}
+          <li class="social-site">
+            <a href="{{ link.url }}" title="{{ link.text }}" role="menuitem">
+              <img src="/img/icons/{{ link.site }}.png" class="shadowed" width="30" height="30" alt="{{ link.text }}" />
+            </a>
+          </li>
+        {% endfor %}
+
+      </ul>
+    </div>
+  </div>
+</footer>

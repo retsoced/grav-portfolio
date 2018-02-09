@@ -1,0 +1,48 @@
+
+<header class="{{ page.header.class }}">
+  <div class="row">
+    {% for info in page.header.blocks %}
+      <div class="{{ info.class}} {{ info.sizes }}">
+        {% if info.name == 'left' %}
+          <h1>{{ info.title }}</h1>
+          <h2>{{ info.subtitle }}</h2>
+        {% elseif info.name == 'center' %}
+
+          {% if info.rowOne %}
+            <p>{{ info.rowOne }}</p>
+          {% endif %}
+
+          {% if info.rowTwo %}
+            <p>{{ info.rowTwo }}</p>
+          {% endif %}
+
+          {% if info.rowThree %}
+            <p>{{ info.rowThree }}</p>
+          {% endif %}
+
+        {% elseif info.name == 'right' %}
+
+          {% if info.rowOne %}
+            <p>{{ info.rowOne }}</p>
+          {% endif %}
+
+          {% if info.rowTwo %}
+            <p>{{ info.rowTwo }}</p>
+          {% endif %}
+
+          {% if info.rowThree %}
+            <p>{{ info.rowThree }}</p>
+          {% endif %}
+
+        {% endif %}
+      </div>
+    {% endfor %}
+
+  </div>
+</header>
+
+<main>
+  <div class="row">
+    <div class="col-12">
+      {{ content }}
+    </div>

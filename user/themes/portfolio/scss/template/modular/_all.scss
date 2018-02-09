@@ -1,0 +1,10 @@
+@import "showcase";
+@import "skills";
+@import "experience";
+@import "text";
+
+.modular {
+    .modular-row:last-child {
+    	padding-bottom: 2rem;
+    }
+}

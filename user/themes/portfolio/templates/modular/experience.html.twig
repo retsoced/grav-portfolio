@@ -1,0 +1,25 @@
+<section class="modular-row {{ page.header.class}}">
+	<header class="section-header">
+		<h2 class="section-title">{{ page.header.pageTitle }}</h2>
+		<h3 class="sub-heading">{{ page.header.subHeading }}</h3>
+	</header>
+	<div class="row">
+		<div class="column page-content">
+			{{ content }}
+		</div>
+		<div class="column">
+			<div class="skillerator">
+
+				{% for experience in page.header.experiences %}
+					<div class="scale" data-percent="{{ experience.percentage }}">
+						<div class="title">
+							<span>{{ experience.skill }}</span>
+						</div>
+						<div class="indicator"></div>
+					</div>
+				{% endfor %}
+
+			</div>
+		</div>
+	</div>
+</section>

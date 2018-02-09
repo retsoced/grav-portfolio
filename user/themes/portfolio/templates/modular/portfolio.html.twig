@@ -1,0 +1,27 @@
+<div class="modular-row {{ page.header.class }}">
+	<section class="content-block">
+		{{ content }}
+	</section>
+	<menu class="project-list">
+    {% for project in page.header.projects %}
+        <div class="preview">
+        	<img src="/img/portfolio/thumb/{{ project.thumbnail }}" class="preview-image" alt="{{ project.header }}" />
+            <a href="#" title="{{ project.header }}" data-featherlight="{{ project.path }}" role="menuitem">
+            {% if project.header %}
+            	<h4>{{ project.header }}</h4>
+            {% endif %}
+
+            {% if project.text %}
+            	<p>{{ project.text }}</p>
+            {% endif %}
+
+            {% if project.icon %}
+            	<i class="fa fa-fw fa-{{ project.icon }}"></i>
+            {% endif %}
+           </a>
+        </div>
+    {% endfor %}
+    </menu>
+</div>
+
+<div class="parallax-container" data-parallax="scroll" data-image-src="//c1.staticflickr.com/7/6164/6138266769_92b4b7b531_o.jpg"></div>

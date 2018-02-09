@@ -1,0 +1,32 @@
+{% set skills_image = page.media.images|first.grayscale().contrast(5).brightness(-50).colorize(-35,81,122) %}
+
+{% if skills_image %}
+	<div class="modular-row skills {{ page.header.class}}" background-image: url({{ skills_image.url }});">
+{% else %}
+	<div class="modular-row skills {{ page.header.class}}">
+{% endif %}
+
+    {{ content }}
+    <div class="skill-items">
+    {% for skill in page.header.skills %}
+           <div class="skill">
+           
+            {% if skill.icon %}
+            	<i class="fa fa-fw fa-{{ skill.icon }}"></i>
+            	<div class="skill-content icon-offset">
+            {% else %}
+            	<div class="skill-content">
+            {% endif %}
+            
+            {% if skill.header %}
+            	<h4>{{ skill.header }}</h4>
+            {% endif %}
+            
+            {% if skill.text %}
+            	<p>{{ skill.text }}</p>
+            {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>

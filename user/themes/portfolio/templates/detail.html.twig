@@ -1,0 +1,39 @@
+<div class="modal-wrapper">
+	<section class="modular-row {{ page.header.class }}">
+		<div class="column image-col">
+			<ul class="slider">
+				
+				{% for image in page.header.thumbnails %}
+					{% if image.title %}
+						<li>
+							<img src="/img/portfolio/{{ image.name }}2x{{ image.ext }}" class="project-image" alt="{{ image.title }}" />
+						</li>
+					{% endif %}			
+				{% endfor %}
+				
+			</ul>
+		</div>
+		<div class="column info-col">
+			<h1 class="project-title">{{ page.header.projectTitle }}</h1>
+			
+			<ul class="detail-list">
+			
+				{% for detail in page.header.details %}
+					{% if detail.skill %}
+						<li><h3 class="detail-title">{{ detail.skill }}</h3></li>
+					{% endif %}
+				{% endfor %}
+				
+			</ul>
+			
+			<article class="detail-content">
+				{{ content }}
+				
+				{% if page.header.siteLink %}
+					<h4 class="project-link"><a href="{{ page.header.siteLink }}" title="{{ page.header.projectTitle }}">View project online</a></h4>
+				{% endif %}
+			
+			</article>
+		</div>
+	</section>
+</div>

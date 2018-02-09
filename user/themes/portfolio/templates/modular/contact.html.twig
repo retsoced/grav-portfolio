@@ -1,0 +1,64 @@
+<section class="modular-row {{ page.header.class}}">
+
+    <header class="page-header">
+    	{{ content }}
+    </header>
+    
+    <div class="row">
+    	<section class="one-qtr">
+    		<ul class="contact-list">
+					{% for contact in page.header.contacts %}
+				  	
+				  		{% if contact.method %}
+				  			{% if contact.method == 'email' %}
+				  				<li><i class="fa fa-{{ contact.class }}"></i>{{ contact.msg }}<a href="{{ contact.link }}"> {{ contact.link }}</a></li>
+				  			{% else %}
+				  				<li><i class="fa fa-{{ contact.class }}"></i>{{ contact.msg }}<a href="{{ contact.via }}"> {{ contact.link }}</a></li>
+				  			{% endif %}
+				  		{% endif %}
+
+					{% endfor %}
+    		</ul>
+    	</section>
+	  	<section class="form-block three-qtr">
+		  	<form id="contact-form" name="contact-form" action="" method="post">
+		  		<fieldset>
+		  				<i class="fa fa-user-o"></i>
+		  				<input type="text" id="contact-name" name="contact-name" placeholder="Enter your name" required />
+		  		</fieldset>
+		  		<fieldset>
+		  				<i class="fa fa-envelope-o"></i>
+		  				<input type="email" id="contact-email" name="contact-email" placeholder="Enter your email" required />
+		  		</fieldset>
+		  		<fieldset>
+		  			<i class="fa fa-pencil-square-o"></i>
+		  			<textarea id="contact-message" name="contact-message" placeholder="Enter your message"></textarea>
+		  		</fieldset>
+		  		<fieldset>
+		  			<input type="submit" id="contact-submit" name="contact-submit" value="Submit" />
+		  			<input type="reset" id="contact-reset" name="contact-rest" value="Reset" />
+		  		</fieldset>
+				</form>
+	  	</section>
+	  	
+	  	{% for response in page.header.responses %}
+		  	<section class="response-block {{ response.class }} two-third">
+		  	
+		  		{% if response.title %}
+		  			<header class="section-header">
+		  				<h3>{{ response.title }}</h3>
+						</header>
+		  		{% endif %}
+		  		
+		  		{% if response.text %}
+			  		<article class="section-copy">
+			  			<p>{{ response.text }}</p>
+			  		</article>
+		  		{% endif %}
+		  		
+		  	</section>
+			{% endfor %}
+		
+    </div>
+		
+</section>

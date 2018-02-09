@@ -1,0 +1,20 @@
+
+<section class="modular-row {{ page.header.class }}">
+	<article>
+    <img src="/img/bio-image.jpg" class="bio-image {{ page.header.image_align }}" alt="Darryll DeCoster photo" />
+		{{ content }}
+	</article>
+	<menu class="social-links">
+		<ul>
+
+		{% for site in page.header.social %}
+	  	<li class="social-site">
+	  		<a href="{{ site.url }}" title="{{ site.alt }}" role="menuitem">
+	  			<img src="/img/icons/{{ site.icon }}" class="shadowed" width="40" height="40" alt="Find me on {{ site.title }}" />
+	  		</a>
+	  	</li>
+		{% endfor %}
+
+		</ul>
+	</menu>
+</section>

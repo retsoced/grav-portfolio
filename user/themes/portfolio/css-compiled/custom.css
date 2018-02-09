@@ -1,0 +1,32 @@
+.grav-lightslider .lSSlideOuter .lSPager.lSpg > li a {
+  z-index: 1; }
+
+#body > script:first-child + .grav-lightslider {
+  margin-top: -3rem; }
+
+.project-grid {
+  position: relative; }
+  .project-grid menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .project-grid menu .preview {
+      display: block;
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin-bottom: 2.6em;
+      border: 2px solid #ccc; }
+      .project-grid menu .preview a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%; }
+
+.contact {
+  display: block;
+  position: relative;
+  overflow: auto;
+  height: 1000px;
+  background: #f7f7f7; }
